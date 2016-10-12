@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		@keyframes myanim{
+			100%{
+				transform:rotate(360deg);
+			}
+		}
+		img{
+			animation:myanim 10s linear infinite;
+		}
+		.stop{
+			animation-play-state:paused;
+		}
+	</style>
+</head>
+<body>
+	<img src="images/record.png" alt="">
+	<audio id="music" src="群星 - 每一句说话.mp3" autoplay controls></audio>
+	<script src="jquery.js"></script>
+	<script>
+
+		var music = document.querySelector("#music");
+		$("img").click(function(){
+			$(this).toggleClass("stop");
+			if(music.paused){
+				music.play();
+			}else{
+				music.pause();
+			}
+		})
+
+		music.addEventListener("ended",function(){
+			$("img").addClass("stop");
+		})
+	</script>
+</body>
+</html>

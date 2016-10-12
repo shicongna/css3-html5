@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#list li{
+			width:100px;
+			height: 100px;
+			border:1px solid red;
+			background-color: blue;
+			list-style: none;
+			position: relative;
+			overflow: hidden;
+		}
+		#list li .innerbox{
+			height: 100px;
+			width: 100px;
+			background-color: yellow;
+			position: absolute;
+			top: 0px;
+			left:0px;
+			transform-origin:left bottom;
+			transition:transform 1s linear;
+			transform:rotate(90deg);
+			z-index: 999;
+		}
+		#list li .back{
+			transform:rotate(0deg);
+		}
+	</style>
+</head>
+<body>
+	<ul id="list">
+		<li>
+			<a href="">一</a>
+			<div class="innerbox">A</div>
+		</li>
+		<li>
+			<a href="">二</a>
+			<div class="innerbox">B</div>
+		</li>
+		<li>
+			<a href="">三</a>
+			<div class="innerbox">C</div>
+		</li>
+	</ul>
+	<script src="jquery.js"></script>
+	<script>
+		$("#list li").hover(function(){
+			$(this).find(".innerbox").toggleClass("back");
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+		aside ul li{
+			list-style: none;
+			line-height: 2;
+		}
+		.box{
+			position: absolute;
+			top:0;
+			left:0;
+			width: 100px;
+			height: 100%;
+			background-color: pink;
+			transform:translateX(-100px);
+			transition:transform 2s linear;
+		}
+		#btn2{
+			margin-left: 70px;
+		}
+		.display{
+			transform:translateX(0px);
+		}
+	</style>
+</head>
+<body>
+	<button id="btn1">open</button>
+	<aside>
+		<div class="box">
+			<ul>
+				<input type="button" id="btn2" value="关闭">
+				<li><a href="">首页</a></li>
+				<li><a href="">博客</a></li>
+				<li><a href="">信息</a></li>
+				<li><a href="">关于</a></li>
+			</ul>
+		</div>
+		
+	</aside>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript">
+		$("#btn1").click(function(){
+			$(".box").addClass("display")
+		})
+		$("#btn2").click(function(){
+			$(".box").removeClass("display")
+		})
+	</script>
+</body>
+</html>

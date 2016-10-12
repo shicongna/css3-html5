@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+		@keyframes myanim{
+			50%{
+				transform:translateX(-30px);
+			}
+		}
+		@keyframes chuan{
+			50%{
+				transform:translateX(60px);
+			}
+			50%{
+				transform:rotate(-10deg);
+			}
+		}
+		@keyframes yu{
+			25%{
+				transform:rotate(-30deg);
+				top:400px;
+				left:500px;
+			}
+			50%{
+				transform:rotate(30deg);
+				top:600px;
+				left:700px;
+			}
+			75%{
+				transform:rotate(-30deg);
+				top:400px;
+				left:800px;
+			}
+			100%{
+				transform:rotate(30deg);
+				top:600px;
+				left:1000px;
+			}
+		}
+		html,body{
+			height: 100%;
+			overflow: hidden;
+		}
+		.wave1{
+			width: 130%;
+			height: 20%;
+			position:absolute;
+			bottom:130px;
+			left:0px;
+			background-image: url(images/wave1.png);
+			animation:myanim 5s linear infinite;
+		}
+		.wave2{
+			width: 130%;
+			height: 20%;
+			position:absolute;
+			bottom:70px;
+			left:0px;
+			background-image: url(images/wave2.png);
+			animation:myanim 4s ease infinite;
+		}
+		.wave3{
+			width: 130%;
+			height: 20%;
+			position:absolute;
+			bottom:0px;
+			left:0px;
+			background-image: url(images/wave3.png);
+			animation:myanim 3s ease-in infinite;
+			z-index: 1000;
+		}
+		.caple img{
+			position: absolute;
+			bottom:100px;
+			left:200px;
+			z-index:999;
+			animation:chuan 8s linear infinite;
+			z-index:99;
+		}
+		.yu img{
+			position: absolute;
+			bottom:0px;
+			z-index:999;
+			animation:yu 8s linear infinite;
+		}
+		.sea{
+			background-image: url(images/bg.png);
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+</head>
+<body>
+	<div class="sea">
+		<div class="yu">
+			<img src="images/yu.png" alt="">
+		</div>
+		<div class="caple">
+			<img src="images/chuan.png" alt="">
+		</div>
+		<div class="wave1"></div>
+		<div class="wave2"></div>
+		<div class="wave3"></div>
+	</div>
+</body>
+</html>
